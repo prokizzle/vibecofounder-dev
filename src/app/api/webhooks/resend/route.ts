@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { createHmac } from "crypto";
 import * as Sentry from "@sentry/nextjs";
+import { upsertHubSpotContact } from "@/app/_lib/hubspot";
 
 /* ── Contact store (file-based, append-only) ──────────────────── *
  * For a real production app, swap this with a database.           *
@@ -136,6 +137,7 @@ export async function POST(request: Request) {
 
       case "email.bounced":
         await upsertContact(email, "production-checklist", "bounced");
+        await upsertHubSpotContact({ email, source: "production-checklist", status: "bounced" });
         Sentry.captureMessage(`[resend-webhook] Email bounced: ${email}`, {
           level: "warning",
           tags: { area: "email", source: "webhook", event: "bounced" },
@@ -145,6 +147,7 @@ export async function POST(request: Request) {
 
       case "email.complained":
         await upsertContact(email, "production-checklist", "complained");
+        await upsertHubSpotContact({ email, source: "production-checklist", status: "complained" });
         Sentry.captureMessage(`[resend-webhook] Spam complaint: ${email}`, {
           level: "warning",
           tags: { area: "email", source: "webhook", event: "complained" },

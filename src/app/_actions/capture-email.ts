@@ -4,6 +4,7 @@ import { Resend } from "resend";
 import { writeFile, readFile } from "fs/promises";
 import { join } from "path";
 import * as Sentry from "@sentry/nextjs";
+import { upsertHubSpotContact } from "@/app/_lib/hubspot";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -158,6 +159,7 @@ export async function captureEmail(
       html: CHECKLIST_HTML,
     });
     await addContact(email, "production-checklist");
+    await upsertHubSpotContact({ email, source: "production-checklist", lifecycleStage: "lead" });
     return { success: true };
   } catch (err) {
     Sentry.captureException(err, {
