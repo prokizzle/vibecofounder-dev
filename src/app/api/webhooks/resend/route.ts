@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { createHmac } from "crypto";
+import * as Sentry from "@sentry/nextjs";
 
 /* ── Contact store (file-based, append-only) ──────────────────── *
  * For a real production app, swap this with a database.           *
@@ -83,6 +84,10 @@ export async function POST(request: Request) {
   const timestamp = request.headers.get("svix-timestamp") ?? "";
 
   if (!verifySignature(body, signature, timestamp)) {
+    Sentry.captureMessage("[resend-webhook] Invalid signature", {
+      level: "warning",
+      tags: { area: "email", source: "webhook" },
+    });
     return NextResponse.json({ error: "Invalid signature" }, { status: 401 });
   }
 
@@ -97,7 +102,10 @@ export async function POST(request: Request) {
 
   try {
     event = JSON.parse(body);
-  } catch {
+  } catch (err) {
+    Sentry.captureException(err, {
+      tags: { area: "email", source: "webhook", action: "parse" },
+    });
     return NextResponse.json({ error: "Invalid JSON" }, { status: 400 });
   }
 
@@ -107,35 +115,50 @@ export async function POST(request: Request) {
 
   console.log(`[resend-webhook] ${type}: ${email}`);
 
-  switch (type) {
-    case "email.sent":
-      await upsertContact(email, "production-checklist", "active");
-      break;
+  try {
+    switch (type) {
+      case "email.sent":
+        await upsertContact(email, "production-checklist", "active");
+        break;
 
-    case "email.delivered":
-      await upsertContact(email, "production-checklist", "active");
-      break;
+      case "email.delivered":
+        await upsertContact(email, "production-checklist", "active");
+        break;
 
-    case "email.bounced":
-      await upsertContact(email, "production-checklist", "bounced");
-      console.warn(`[resend-webhook] Bounced: ${email} — removing from active`);
-      break;
+      case "email.bounced":
+        await upsertContact(email, "production-checklist", "bounced");
+        Sentry.captureMessage(`[resend-webhook] Email bounced: ${email}`, {
+          level: "warning",
+          tags: { area: "email", source: "webhook", event: "bounced" },
+          extra: { email },
+        });
+        break;
 
-    case "email.complained":
-      await upsertContact(email, "production-checklist", "complained");
-      console.warn(`[resend-webhook] Spam complaint: ${email}`);
-      break;
+      case "email.complained":
+        await upsertContact(email, "production-checklist", "complained");
+        Sentry.captureMessage(`[resend-webhook] Spam complaint: ${email}`, {
+          level: "warning",
+          tags: { area: "email", source: "webhook", event: "complained" },
+          extra: { email },
+        });
+        break;
 
-    case "email.opened":
-      console.log(`[resend-webhook] Opened: ${email}`);
-      break;
+      case "email.opened":
+        console.log(`[resend-webhook] Opened: ${email}`);
+        break;
 
-    case "email.clicked":
-      console.log(`[resend-webhook] Clicked: ${email}`);
-      break;
+      case "email.clicked":
+        console.log(`[resend-webhook] Clicked: ${email}`);
+        break;
 
-    default:
-      console.log(`[resend-webhook] Unhandled event type: ${type}`);
+      default:
+        console.log(`[resend-webhook] Unhandled event type: ${type}`);
+    }
+  } catch (err) {
+    Sentry.captureException(err, {
+      tags: { area: "email", source: "webhook", action: "upsert" },
+      extra: { email, eventType: type },
+    });
   }
 
   return NextResponse.json({ received: true });

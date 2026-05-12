@@ -3,6 +3,7 @@
 import { Resend } from "resend";
 import { writeFile, readFile } from "fs/promises";
 import { join } from "path";
+import * as Sentry from "@sentry/nextjs";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -133,7 +134,10 @@ export async function captureEmail(
 
   const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey) {
-    console.error("[lead-capture] RESEND_API_KEY not set");
+    Sentry.captureMessage("[lead-capture] RESEND_API_KEY not set", {
+      level: "error",
+      tags: { area: "email", source: "capture-email" },
+    });
     return { success: false, error: "Email service not configured. Please try again later." };
   }
 
@@ -147,7 +151,10 @@ export async function captureEmail(
     await addContact(email, "production-checklist");
     return { success: true };
   } catch (err) {
-    console.error("[lead-capture] Resend error:", err);
+    Sentry.captureException(err, {
+      tags: { area: "email", source: "capture-email", action: "send" },
+      extra: { email },
+    });
     return { success: false, error: "Failed to send email. Please try again." };
   }
 }
