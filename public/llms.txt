@@ -1,0 +1,45 @@
+# VibeCofounder
+
+> On-demand technical cofounder who gets vibe coders past the 80% wall and into production.
+
+## What it does
+
+VibeCofounder is a service by Nick Prokesch, a senior engineer who steps in alongside AI-first founders to handle the hard 20% that tools like Cursor, Copilot, Claude, Bolt, v0, and Lovable can't reliably produce: production auth flows, payment infrastructure, database schema design, CI/CD pipelines, mobile deployment, App Store submission, and architecture review.
+
+The founder stays in control. Every PR is reviewed by them. No retainers, no long-term lock-in, no black-box handoffs.
+
+## Who it's for
+
+Solo founders and indie developers who built a working prototype with AI coding tools but hit the "80% wall" — the point where AI stops being useful and production engineering becomes essential. They're technical enough to ship a prototype, not experienced enough to make it production-grade.
+
+## How it works
+
+1. Free 30-minute intro call (actual problem-solving, not a sales pitch)
+2. Scoped project engagement with clear deliverables
+3. Founder reviews every PR, stays in the loop, learns from the process
+4. Ship a production-ready product you understand and control
+
+## Pricing
+
+See /pricing.md for structured pricing data.
+
+## Key pages
+
+- / — Homepage (problem, how it works, services, testimonials, FAQ)
+- /tools — AI tool integration pages (Cursor, Copilot, Claude, Bolt, v0, Lovable)
+- /tools/[tool] — Per-tool production hardening details and service breakdown
+- /comparisons — Service and AI tool comparison pages
+- /comparisons/[slug] — Detailed AI tool comparisons (e.g. Cursor vs Copilot)
+- /for/[tool] — Persona pages: technical cofounder for [tool] founders
+- /glossary — Production engineering glossary for vibe coders
+- /glossary/[slug] — Per-term definitions with AI gotcha warnings
+- /about — About Nick Prokesch
+- /contact — Book a free intro call
+
+## Glossary of key terms
+
+- **Vibe coding**: Building software primarily through AI-assisted development tools with prompt-driven iteration
+- **The 80% wall**: The point where AI-generated code stops being useful and production engineering becomes essential
+- **Production readiness**: The state where an app can safely handle real users, real data, and real traffic
+- **Refresh token rotation**: Security pattern where each refresh token use invalidates the old one
+- **Idempotent webhooks**: Webhooks that produce the same result whether received once or multiple times
