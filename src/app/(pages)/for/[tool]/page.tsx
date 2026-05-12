@@ -99,7 +99,7 @@ export default async function TechnicalCofounderPage({ params }: PageProps) {
               <span className="text-gradient">{tool.name}</span> founders
             </h1>
             <p className="mt-6 text-lg text-muted leading-relaxed max-w-2xl">
-              You built your prototype with {tool.name}. That work is real. Now you need someone who understands both {tool.name}'s strengths and its production gaps — and can bridge the 80% wall without rewriting everything from scratch.
+              You built your prototype with {tool.name}. That work is real. Now you need someone who understands both {tool.name}&apos;s strengths and its production gaps — and can bridge the 80% wall without rewriting everything from scratch.
             </p>
             <p className="mt-3 text-xs text-muted/60">Last updated: May 2026</p>
             <div className="mt-10">

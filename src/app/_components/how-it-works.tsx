@@ -1,6 +1,6 @@
 "use client";
 
-import { Container, SectionIntro, FadeIn, FadeInStagger, FadeInItem } from "./ui";
+import { Container, SectionIntro, FadeInStagger, FadeInItem } from "./ui";
 import { MessageCircle, Code, Rocket } from "lucide-react";
 
 const steps = [

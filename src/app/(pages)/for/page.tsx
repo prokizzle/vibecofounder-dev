@@ -36,7 +36,7 @@ export default function ForIndex() {
                     </h3>
                   </div>
                   <p className="text-sm text-muted leading-relaxed">
-                    Technical cofounder who understands {tool.name}'s production gaps and fixes what matters.
+                    Technical cofounder who understands {tool.name}&apos;s production gaps and fixes what matters.
                   </p>
                 </Link>
               </FadeInItem>

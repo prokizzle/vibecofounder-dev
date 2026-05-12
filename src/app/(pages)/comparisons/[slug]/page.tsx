@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Container, SectionIntro, FadeIn, FadeInStagger, FadeInItem } from "@/app/_components/ui";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
-import { toolComparisons, getComparisonBySlug, allComparisonSlugs } from "@/data/comparisons";
+import { getComparisonBySlug, allComparisonSlugs } from "@/data/comparisons";
 
 interface PageProps {
   params: Promise<{ slug: string }>;

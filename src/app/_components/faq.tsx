@@ -39,7 +39,7 @@ export function FAQ() {
           className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-4"
           stagger={0.05}
         >
-          {faqs.map((faq, i) => (
+          {faqs.map((faq) => (
             <FadeInItem key={faq.q}>
               <FAQItem faq={faq} />
             </FadeInItem>

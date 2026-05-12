@@ -18,7 +18,7 @@ export function CTA() {
                 Stop vibing. Start shipping.
               </h2>
               <p className="mt-4 text-base text-muted leading-relaxed">
-                Book a 30-minute call. We look at your stack, figure out what's
+                Book a 30-minute call. We look at your stack, figure out what&apos;s
                 blocking you, and decide if it makes sense to work together. No pitch.
                 Just problem-solving.
               </p>
