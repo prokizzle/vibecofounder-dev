@@ -14,7 +14,7 @@ Solo founders and indie developers who built a working prototype with AI coding 
 
 ## How it works
 
-1. Free 30-minute intro call (actual problem-solving, not a sales pitch)
+1. Free 1-hour intro call (actual problem-solving, not a sales pitch)
 2. Scoped project engagement with clear deliverables
 3. Founder reviews every PR, stays in the loop, learns from the process
 4. Ship a production-ready product you understand and control

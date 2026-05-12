@@ -5,7 +5,7 @@
 ## Intro Call
 
 - Price: $0 (free)
-- Duration: 30 minutes
+- Duration: 1 hour
 - What you get: Problem diagnosis, architecture review, honest assessment of what AI missed
 - No sales pitch, no commitment required
 
@@ -41,7 +41,7 @@
 
 ## How to get started
 
-1. Book a free intro call at https://cal.com/nicholasprokesch/30min
+1. Book a free intro call at https://fantastical.app/giq5x5fcyt-s8uy/1-hour-meeting
 2. I diagnose the specific production gaps in your app
 3. I scope a fixed engagement with clear deliverables
 4. You review every PR and stay in control throughout

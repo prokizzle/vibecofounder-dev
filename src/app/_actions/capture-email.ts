@@ -124,7 +124,7 @@ const CHECKLIST_HTML = `
   </ul>
 
   <p style="margin-top:28px;">Every unchecked item is a gap AI can't fill. I fix these for founders every week.</p>
-  <a href="https://cal.com/nicholasprokesch/30min" class="cta">Book a free intro call</a>
+  <a href="https://fantastical.app/giq5x5fcyt-s8uy/1-hour-meeting" class="cta">Book a free intro call</a>
 
   <div class="footer">
     <p>VibeCofounder — On-demand technical cofounder for AI-built products.</p>

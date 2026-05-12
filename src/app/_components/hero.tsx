@@ -32,7 +32,7 @@ export function Hero() {
             <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
           </Link>
           <Link
-            href="https://cal.com/nicholasprokesch/30min"
+            href="https://fantastical.app/giq5x5fcyt-s8uy/1-hour-meeting"
             target="_blank"
             rel="noopener noreferrer"
             className="text-sm text-muted-soft hover:text-foreground transition-colors py-3"

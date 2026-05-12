@@ -227,11 +227,11 @@ export default async function TechnicalCofounderPage({ params }: PageProps) {
                   Your {tool.name} prototype deserves to ship.
                 </h2>
                 <p className="mt-4 text-base text-muted leading-relaxed">
-                  Book a free 30-minute call. We look at your codebase, figure out what&apos;s blocking you, and get you past the 80% wall.
+                  Book a free 1-hour call. We look at your codebase, figure out what&apos;s blocking you, and get you past the 80% wall.
                 </p>
                 <div className="mt-8">
                   <Link
-                    href="https://cal.com/nicholasprokesch/30min"
+                    href="https://fantastical.app/giq5x5fcyt-s8uy/1-hour-meeting"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn-press group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-accent text-background font-semibold hover:bg-accent-hover transition-colors text-sm"

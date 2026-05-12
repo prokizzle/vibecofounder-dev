@@ -5,7 +5,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Contact — Book a Free Intro Call | VibeCofounder",
   description:
-    "Book a 30-minute call. We'll look at your stack, figure out what's blocking you, and decide if it makes sense to work together.",
+    "Book a 1-hour call. We'll look at your stack, figure out what's blocking you, and decide if it makes sense to work together.",
 };
 
 export default function Contact() {
@@ -21,14 +21,14 @@ export default function Contact() {
           <span className="text-gradient">what&apos;s blocking you.</span>
         </h1>
         <p className="text-lg text-muted max-w-xl mx-auto leading-relaxed mb-10">
-          Book a 30-minute call. We&apos;ll look at your stack, figure out
+          Book a 1-hour call. We&apos;ll look at your stack, figure out
           what&apos;s broken, and decide if it makes sense to work together.
           No pitch, no commitment. Just problem-solving.
         </p>
 
         <div className="flex flex-col items-center gap-6 mb-12">
           <Link
-            href="https://cal.com/nicholasprokesch/30min"
+            href="https://fantastical.app/giq5x5fcyt-s8uy/1-hour-meeting"
             target="_blank"
             rel="noopener noreferrer"
             className="group inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white text-black font-semibold hover:bg-zinc-200 transition-colors text-sm"
@@ -41,7 +41,7 @@ export default function Contact() {
           <div className="flex items-center gap-6 text-xs text-muted">
             <span className="flex items-center gap-1.5">
               <Clock className="w-3.5 h-3.5" />
-              30 minutes
+              1 hour
             </span>
             <span className="flex items-center gap-1.5">
               <Coffee className="w-3.5 h-3.5" />
