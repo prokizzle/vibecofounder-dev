@@ -160,12 +160,12 @@ export default async function ToolToProductionPage({ params }: PageProps) {
           />
           <FadeInStagger className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-6" stagger={0.06}>
             {[
-              { title: "Auth that doesn't leak", desc: "Complete authentication with refresh token rotation, MFA, social login edge cases, and session management. Not the scaffold AI generates." },
+              { title: "Auth that doesn't leak", desc: "Refresh token rotation, MFA, social login edge cases, session management. The full flow, not the scaffold AI generates." },
               { title: "Payments that settle", desc: "Stripe integration with idempotent webhooks, subscription lifecycle management, failed payment recovery, and proper financial reporting." },
-              { title: "Database that scales", desc: "Schema design with indexing for your actual query patterns, migration strategy, connection pooling, and caching. Not just CREATE TABLE statements." },
+              { title: "Database that scales", desc: "Schema design with indexing for your actual query patterns, migration strategy, connection pooling, and caching. More than CREATE TABLE statements." },
               { title: "Infrastructure that stays up", desc: "CI/CD pipelines, staging environments, Vercel/Fly.io deployment, Sentry error tracking, and alerting. Your app runs on your infrastructure." },
               { title: "Mobile that gets approved", desc: "App Store compliance, provisioning profiles, TestFlight distribution, push notifications, and review appeal handling. End-to-end mobile deployment." },
-              { title: "Architecture review", desc: "I audit your AI-generated codebase for anti-patterns, fix the production concerns, and leave you with a maintainable foundation you understand." },
+              { title: "Architecture review", desc: "I audit your AI-generated codebase for anti-patterns, fix the production concerns, and leave you with code you can actually maintain." },
             ].map((item) => (
               <FadeInItem key={item.title}>
                 <div className="border border-border rounded-xl bg-surface p-6 card-hover h-full">

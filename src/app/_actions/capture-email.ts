@@ -123,7 +123,7 @@ const CHECKLIST_HTML = `
     <li>Dependency audit for known vulnerabilities is clean</li>
   </ul>
 
-  <p style="margin-top:28px;">Every unchecked item is a gap AI can't fill. I handle these for founders every week.</p>
+  <p style="margin-top:28px;">Every unchecked item is a gap AI can't fill. I fix these for founders every week.</p>
   <a href="https://cal.com/nicholasprokesch/30min" class="cta">Book a free intro call</a>
 
   <div class="footer">

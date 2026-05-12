@@ -100,7 +100,7 @@ export default function ProductionChecklistPage() {
               <span className="text-gradient">Checklist</span>
             </h1>
             <p className="mt-6 text-lg text-muted leading-relaxed max-w-2xl">
-              30 items across 6 categories. Go through each one honestly. If you can&apos;t check it off, that&apos;s a gap AI can&apos;t fill — and a place your app will break when real users show up.
+              30 items across 6 categories. Go through each one honestly. If you can&apos;t check it off, that&apos;s a gap AI can&apos;t fill, and a place your app will break when real users show up.
             </p>
           </FadeIn>
         </Container>
@@ -212,7 +212,7 @@ export default function ProductionChecklistPage() {
                         : "Gaps? I fill them for a living."}
                     </h2>
                     <p className="mt-4 text-base text-muted leading-relaxed">
-                      Every unchecked item is something AI can&apos;t reliably fix. I handle these for founders every week. Book a free intro call and get past the 80% wall.
+                      Every unchecked item is something AI keeps getting wrong. I handle these for founders every week. Book a free intro call and get past the 80% wall.
                     </p>
                     <div className="mt-8">
                       <Link

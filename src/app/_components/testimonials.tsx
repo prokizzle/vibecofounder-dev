@@ -32,7 +32,7 @@ export function Testimonials() {
       <Container>
         <SectionIntro
           heading="What unstuck looks like"
-          description="Real projects. Real problems. Real ships."
+          description="Three founders. Three walls. Three shipments."
         />
 
         <FadeInStagger

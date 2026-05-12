@@ -121,7 +121,7 @@ export default async function GlossaryTermPage({ params }: PageProps) {
           <FadeIn className="max-w-2xl">
             <SectionIntro
               heading="Where AI gets this wrong"
-              description="The specific way AI tools fail at this concept, and why it matters for your app."
+              description="How AI tools get this wrong, and why it matters for your app."
             />
             <div className="mt-8">
               <div className="border border-red-400/20 rounded-xl bg-red-400/5 p-6">

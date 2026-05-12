@@ -126,9 +126,9 @@ export default async function TechnicalCofounderPage({ params }: PageProps) {
 
             <FadeInStagger className="mt-16 lg:mt-0 space-y-6" stagger={0.1}>
               {[
-                { step: "01", title: "I review your codebase", desc: `I look at what ${tool.name} generated, identify the production gaps, and give you a clear list of what needs fixing — not what needs rewriting.` },
-                { step: "02", title: "I fix the hard 20%", desc: "Auth edge cases. Payment webhooks. Database indexes. App Store compliance. CI/CD pipelines. I handle the things AI can't reliably get right." },
-                { step: "03", title: "You review, we ship", desc: "Every fix is a PR. You review it, you understand it, you merge it. When we're done, you have a production-grade codebase you own and understand." },
+                { step: "01", title: "I review your codebase", desc: `I look at what ${tool.name} generated, identify the production gaps, and give you a clear list of what needs fixing (not rewriting).` },
+                { step: "02", title: "I fix the hard 20%", desc: "Auth edge cases. Payment webhooks. Database indexes. App Store compliance. CI/CD pipelines. I handle what AI keeps getting wrong." },
+                { step: "03", title: "You review, we ship", desc: "Every fix is a PR. You review it, you merge it, and you understand what changed. When we're done, you own the codebase top to bottom." },
               ].map((s) => (
                 <FadeInItem key={s.step}>
                   <div className="relative pl-12">
@@ -150,7 +150,7 @@ export default async function TechnicalCofounderPage({ params }: PageProps) {
         <Container>
           <SectionIntro
             heading={`What I fix in ${tool.name} projects`}
-            description="The specific production problems I see in every AI-generated codebase."
+            description="The production problems I see in every AI-generated codebase."
           />
           <FadeInStagger className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-6" stagger={0.06}>
             {tool.productionGaps.map((gap, i) => {

@@ -23,7 +23,7 @@ export default function Contact() {
         <p className="text-lg text-muted max-w-xl mx-auto leading-relaxed mb-10">
           Book a 30-minute call. We&apos;ll look at your stack, figure out
           what&apos;s broken, and decide if it makes sense to work together.
-          No pitch. No commitment. Just problem-solving.
+          No pitch, no commitment. Just problem-solving.
         </p>
 
         <div className="flex flex-col items-center gap-6 mb-12">

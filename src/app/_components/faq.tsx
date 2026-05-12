@@ -14,11 +14,11 @@ const faqs = [
   },
   {
     q: "I don't want to lose control of my codebase.",
-    a: "You review every PR. You stay in the loop. I'm here to unblock you, not take over. When we're done, you have a production-grade codebase you understand, not a black box you're afraid to touch.",
+    a: "You review every PR. You stay in the loop. I'm here to unblock you, not take over. When we're done, you have a codebase you understand and can change yourself.",
   },
   {
     q: "How does pricing work?",
-    a: "Everything starts with a free 30-minute call. We figure out what's actually broken and what it'll take to fix it. Then I give you a fixed scope and price. No retainers, no surprise invoices, no long-term commitment. You know exactly what you're getting before you pay anything.",
+    a: "Everything starts with a free 30-minute call. We figure out what's actually broken and what it'll take to fix it. Then I give you a fixed scope and price. No retainers, no surprise invoices. You know exactly what you're getting before you pay anything.",
   },
   {
     q: "Who is this not for?",

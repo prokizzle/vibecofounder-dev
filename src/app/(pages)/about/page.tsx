@@ -101,23 +101,22 @@ export default function About() {
               title="You review every PR"
               body="I work in your repo, on your branches. You review the code
               before it merges. When the engagement ends, you understand
-              everything that was built — no black boxes, no code you're
-              afraid to touch."
+              everything that was built. You own it. You can change it."
             />
             <PrincipleRow
               title="I work with what AI already built"
               body="I won't tell you to throw out your AI-generated code. The
-              prototype you built has value — it proves the concept, it got
-              you 80% there. I fix the parts that break, restructure what
-              needs restructuring, and leave what's working alone."
+              prototype you built proves the concept and got you 80%
+              there. I fix what breaks, restructure what needs it, and leave
+              the rest alone."
             />
             <PrincipleRow
               title="I tell you when you don't need me"
               body="If your problem is solvable with a weekend of focused
               prompting and a good tutorial, I'll tell you that. If you
               actually need a full-time hire, I'll tell you that too. I'm here
-              to get you shipped — not to upsell you into an engagement you
-              don't need."
+              to get you shipped, not to upsell you into something
+              you don't need."
             />
           </div>
         </div>
