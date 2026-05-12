@@ -41,18 +41,27 @@ async function upsertContact(
   source: string,
   status: Contact["status"]
 ): Promise<void> {
-  const contacts = await getContacts();
-  const now = new Date().toISOString();
-  const existing = contacts.find((c) => c.email === email);
+  try {
+    const contacts = await getContacts();
+    const now = new Date().toISOString();
+    const existing = contacts.find((c) => c.email === email);
 
-  if (existing) {
-    existing.status = status;
-    existing.updatedAt = now;
-  } else {
-    contacts.push({ email, source, status, createdAt: now, updatedAt: now });
+    if (existing) {
+      existing.status = status;
+      existing.updatedAt = now;
+    } else {
+      contacts.push({ email, source, status, createdAt: now, updatedAt: now });
+    }
+
+    await saveContacts(contacts);
+  } catch (err) {
+    // File-based store fails on read-only filesystems (e.g. Vercel).
+    // Log to Sentry but don't crash the webhook handler.
+    Sentry.captureException(err, {
+      tags: { area: "email", source: "webhook", action: "contact-store-write" },
+      extra: { email, status },
+    });
   }
-
-  await saveContacts(contacts);
 }
 
 /* ── Webhook signature verification ──────────────────────────── */
@@ -155,8 +164,9 @@ export async function POST(request: Request) {
         console.log(`[resend-webhook] Unhandled event type: ${type}`);
     }
   } catch (err) {
+    // Safety net for unexpected errors beyond contact-store writes
     Sentry.captureException(err, {
-      tags: { area: "email", source: "webhook", action: "upsert" },
+      tags: { area: "email", source: "webhook" },
       extra: { email, eventType: type },
     });
   }

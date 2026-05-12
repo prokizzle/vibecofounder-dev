@@ -27,11 +27,20 @@ async function getContacts(): Promise<Contact[]> {
 }
 
 async function addContact(email: string, source: string): Promise<void> {
-  const contacts = await getContacts();
-  const now = new Date().toISOString();
-  if (!contacts.find((c) => c.email === email)) {
-    contacts.push({ email, source, status: "active", createdAt: now, updatedAt: now });
-    await writeFile(join(process.cwd(), CONTACTS_FILE), JSON.stringify(contacts, null, 2));
+  try {
+    const contacts = await getContacts();
+    const now = new Date().toISOString();
+    if (!contacts.find((c) => c.email === email)) {
+      contacts.push({ email, source, status: "active", createdAt: now, updatedAt: now });
+      await writeFile(join(process.cwd(), CONTACTS_FILE), JSON.stringify(contacts, null, 2));
+    }
+  } catch (err) {
+    // File-based store fails on read-only filesystems (e.g. Vercel).
+    // Log to Sentry but don't crash the email send.
+    Sentry.captureException(err, {
+      tags: { area: "email", source: "capture-email", action: "contact-store-write" },
+      extra: { email },
+    });
   }
 }
 
